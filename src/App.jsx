@@ -36,7 +36,6 @@ const endpoint= query?
 const response=await fetch(endpoint,API_OPTIONS)
 const data=await response.json();
 setMovies(data.results)
-
 if(query && data.results.length>0){
   await updateSearchCount(query,data.results[0]);
 }
@@ -82,7 +81,7 @@ useEffect(()=>{
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           </header>
          {trending.length >0 && <section className='trending'>
-<h2>Teending Movies</h2>
+<h2>Trending Movies</h2>
 <ul>
   {trending.map((movie,index)=>
   (
